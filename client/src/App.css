@@ -1,38 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+.WhiteLink {
+  color: hsl(0, 0%, 95%);
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  height: 100vh;
+  color: hsl(0, 0%, 95%);
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+.NavBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  width: 100%;
+  height: 4em;
+  background-color: hsl(0, 0%, 10%);
+  align-items: center;
+  justify-content: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.NavBar * {
+  color: hsl(0, 0%, 95%);
+  text-decoration: none;
 }
+
+.SignUp {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 20em;
+}
+
+.AuthWindow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: left;
+}
+
+.AuthWindow input {
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 0.2em;
+  padding-left: 0.5em;
+  color: hsl(0, 0%, 95%);
+}
+
+.AuthWindow input:focus {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.AuthWindow button {
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 10px;
+  border: none;
+  margin-top: 1em;
+  padding: 0.3em;
+}
+
+.AuthWindow button:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+
+/*.App-logo {*/
+/*  height: 40vmin;*/
+/*  pointer-events: none;*/
+/*}*/
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  .App-logo {*/
+/*    animation: App-logo-spin infinite 20s linear;*/
+/*  }*/
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
