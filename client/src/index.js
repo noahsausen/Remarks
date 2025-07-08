@@ -7,7 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Route, Routes} from "react-router";
 import Signup from "./pages/auth/Signup";
-import Home from "./pages/home";
+import Login from "./pages/auth/Login";
+import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
         <Route path="/" element={<App/>}>
           <Route index element={<Home/>}/>
           <Route path="signup" element={<Signup/>} />
+          <Route path="login" element={<Login/>} />
         </Route>
       </Routes>
     </BrowserRouter>

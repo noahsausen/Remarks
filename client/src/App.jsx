@@ -1,5 +1,4 @@
 import './App.css';
-import Register from './pages/auth/Signup.jsx';
 import {Outlet} from "react-router";
 
 document.body.style.background = 'hsl(0, 0%, 5%)';
