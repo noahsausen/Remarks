@@ -27,7 +27,12 @@ function LoginForm() {
     try {
       const res= await axios.post("http://localhost:24/auth/login", data);
       document.getElementById("LoadingBackground").style.display = "none";
-      alert("Logged in successfully!");
+      // alert("Logged in successfully!");
+      const token = res.data.token;
+      if (token) {
+        localStorage.setItem("token", token);
+      }
+      window.location.replace("/home");
     } catch (error) {
       document.getElementById("LoadingBackground").style.display = "none";
       alert(error);

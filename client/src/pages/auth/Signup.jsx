@@ -30,9 +30,9 @@ function SignupForm() {
       alert("Password must be at least 5 characters");
     } else {
       try {
-        await axios.post("http://localhost:24/auth/signup", data);
+        const res = await axios.post("http://localhost:24/auth/signup", data);
         document.getElementById("LoadingBackground").style.display = "none";
-        alert("User created successfully!");
+        // alert("User created successfully!");
         // Auth and go to home
       } catch (error) {
         document.getElementById("LoadingBackground").style.display = "none";

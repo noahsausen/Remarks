@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+body, html, #root {
+  background-color: hsl(0, 0%, 5%);
+}
+
 .WhiteLink {
   color: hsl(0, 0%, 95%);
 }
@@ -27,7 +31,7 @@
   padding: 1em;
   width: 100%;
   height: 4em;
-  background-color: hsl(0, 0%, 10%);
+  background-color: hsl(0, 0%, 5%);
   align-items: center;
   justify-content: left;
 }
@@ -35,6 +39,20 @@
 .NavBar * {
   color: hsl(0, 0%, 95%);
   text-decoration: none;
+}
+
+.NavBarFiller {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#Logout {
+  display: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  font-size: 1em;
 }
 
 .SignUp {
@@ -99,6 +117,59 @@
 
 .LoadingBackgroundShow {
   display: flex;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.HomeHeading {
+  margin: 0;
+}
+
+.HomeSubheading {
+  color: hsl(0, 0%, 80%);
+  font-weight: 350;
+}
+
+.Send {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  padding: 1em;
+  background-color: hsl(0, 0%, 10%);
+  width: 100%;
+  gap: 0.7em;
+}
+
+.Send input {
+  background-color: hsl(0, 0%, 15%);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em;
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: hsl(0, 0%, 95%);
+}
+
+.Send button {
+  background-color: transparent;
+  border-radius: 50%;
+  height: 2.4em;
+  width: 2.4em;
+  outline: none;
+  border: none;
+}
+
+.Send img {
+  rotate: 45deg;
 }
 
 /*.App-logo {*/

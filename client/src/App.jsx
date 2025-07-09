@@ -1,13 +1,25 @@
 import './App.css';
 import {Outlet} from "react-router";
-
-document.body.style.background = 'hsl(0, 0%, 5%)';
+import {useEffect} from "react";
 
 export default function App() {
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      document.getElementById("Logout").style.display = "block";
+    }
+  })
+
+  function LogoutUser() {
+    localStorage.removeItem("token");
+  }
+
   return (
     <div className="App">
       <nav className="NavBar">
         <a href="/"><h1>Remarks</h1></a>
+        <div className="NavBarFiller"></div>
+        <button id="Logout" onClick={LogoutUser}>Log Out</button>
       </nav>
       <Outlet/>
     </div>
