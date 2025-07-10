@@ -21,7 +21,9 @@ export default function Home() {
         decoded = jwtDecode(token);
         setUser(decoded.user);
       } else {
+        localStorage.removeItem("token");
         window.location.replace("/");
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);
