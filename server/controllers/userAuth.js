@@ -55,6 +55,11 @@ exports.verifyToken = async (req, res) => {
 
     const verifiedToken = jwt.verify(token, process.env.JWT_PRIVATE_KEY);
     // console.log(verifiedToken);
+
+    const user = await User.findOne({username: verifiedToken.user.username});
+    if (!user) {
+      return res.status(409).send({message: 'Invalid token', valid: false, error: error});
+    }
     return res.status(200).send({message: 'Token verified', valid: true, token: verifiedToken});
   } catch (error) {
     return res.status(401).send({message: 'Invalid token', valid: false, error: error});
