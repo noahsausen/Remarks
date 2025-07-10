@@ -4,6 +4,7 @@ import {useEffect} from "react";
 
 export default function App() {
   useEffect(() => {
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
     const token = localStorage.getItem("token");
     if (token) {
       document.getElementById("Logout").style.display = "block";
@@ -12,6 +13,8 @@ export default function App() {
 
   function LogoutUser() {
     localStorage.removeItem("token");
+    window.location.replace("/");
+    window.location.reload();
   }
 
   return (

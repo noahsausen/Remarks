@@ -3,7 +3,7 @@ const User = require("../models/userModel");
 require('dotenv').config();
 
 exports.sendPost = async (req, res) => {
-  console.log("sendPost started");
+  // console.log("sendPost started");
   try {
     console.log(req.body);
     const newPost = new Post({
@@ -15,24 +15,24 @@ exports.sendPost = async (req, res) => {
   } catch (error) {
     return res.status(500).send({message: 'Internal Server Error'});
   }
-  console.log("sendPost finished");
+  // console.log("sendPost finished");
 }
 
 exports.getAllPosts = async (req, res) => {
-  console.log("getAllPosts started");
+  // console.log("getAllPosts started");
   try {
     const posts = await Post.find();
-    res.status(200).send({message: 'Got all posts successfully'}, posts);
+    res.status(200).send({message: 'Got all posts successfully', posts: posts});
   } catch (error) {
     return res.status(500).send({message: 'Internal Server Error'});
   }
 }
 
-exports.getUserPosts = async (req, res) => {
-  console.log("getUserPosts started");
-  try {
-    const posts = await Post.findOne({author: req.body});
-  } catch (error) {
-    return res.status(500).send({message: 'Internal Server Error'});
-  }
-}
+// exports.getUserPosts = async (req, res) => {
+//   console.log("getUserPosts started");
+//   try {
+//     const posts = await Post.findOne({author: req.body});
+//   } catch (error) {
+//     return res.status(500).send({message: 'Internal Server Error'});
+//   }
+// }

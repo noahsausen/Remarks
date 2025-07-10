@@ -3,12 +3,14 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import Send from "../../components/Send";
+import Loading from "../../components/Loading";
 
 
 export default function Home() {
   var decoded;
   const [user, setUser] = useState("");
   async function verifyToken() {
+    document.getElementById("LoadingBackground").style.display = "flex";
     try {
       const token = localStorage.getItem("token");
       if (!token) {
@@ -26,33 +28,45 @@ export default function Home() {
     }
   }
 
+  async function UpdateFeed() {
+    try {
+      const res = await axios.get("http://localhost:24/post/getall");
+      document.getElementById("Feed").innerHTML = "";
+      res.data.posts.forEach((post) => {
+        let postDiv = document.createElement("div");
+        postDiv.className = "Post";
+        postDiv.innerHTML = `
+          <h3>${post.author}</h3>
+          <p>${post.content}</p>
+        `;
+        document.getElementById("Feed").prepend(postDiv);
+      })
+    } catch (error) {
+      console.log(error);
+    }
+    document.getElementById("LoadingBackground").style.display = "none";
+  }
+
   useEffect(() => {
     verifyToken();
-  });
+    UpdateFeed();
+  }, []);
 
 
   return (
     <div className="Home">
       <h1 className="HomeHeading">Welcome, {user.username}.</h1>
       <p className="HomeSubheading">Let's get you caught up.</p>
-      {/*<Feed/>*/}
+      <Feed/>
       <Send author={user.username}/>
+      <Loading/>
     </div>
   );
 }
 
-// function Feed() {
-//   async function UpdateFeed() {
-//     useEffect(() => {
-//       verifyToken();
-//     })
-//   }
-//
-//
-//
-//   return (
-//     <div className="Feed">
-//
-//     </div>
-//   );
-// }
+function Feed() {
+  return (
+    <div id="Feed">
+    </div>
+  );
+}

@@ -14,7 +14,8 @@ body, html, #root {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
+  min-height: calc(100vh - 4em);
+  top: 4em;
   color: hsl(0, 0%, 95%);
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
@@ -23,7 +24,7 @@ body, html, #root {
 }
 
 .NavBar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -53,6 +54,13 @@ body, html, #root {
   outline: none;
   padding: 0;
   font-size: 1em;
+}
+
+.Landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .SignUp {
@@ -120,6 +128,8 @@ body, html, #root {
 }
 
 .Home {
+  margin-top: 4em;
+  margin-bottom: 6em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,8 +145,33 @@ body, html, #root {
   font-weight: 350;
 }
 
+#Feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 1em;
+}
+
+.Post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80vw;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 10%);
+  padding: 1em;
+  gap: 0.5em;
+}
+
+.Post * {
+  margin: 0;
+}
+
 .Send {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
