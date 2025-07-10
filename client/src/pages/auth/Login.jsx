@@ -25,7 +25,7 @@ function LoginForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const res= await axios.post("https://remarks-server.vercel.app/auth/login", data);
+      const res= await axios.post("https://remarks-server-fuju.onrender.com/auth/login", data);
       document.getElementById("LoadingBackground").style.display = "none";
       // alert("Logged in successfully!");
       const token = res.data.token;

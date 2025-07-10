@@ -16,7 +16,7 @@ export default function Home() {
       if (!token) {
         window.location.replace("/");
       }
-      const res = await axios.post("https://remarks-server.vercel.app/auth/verify", {token: token});
+      const res = await axios.post("https://remarks-server-fuju.onrender.com/auth/verify", {token: token});
       if (res.data.valid) {
         decoded = jwtDecode(token);
         setUser(decoded.user);
@@ -30,7 +30,7 @@ export default function Home() {
 
   async function UpdateFeed() {
     try {
-      const res = await axios.get("https://remarks-server.vercel.app/post/getall");
+      const res = await axios.get("https://remarks-server-fuju.onrender.com/post/getall");
       document.getElementById("Feed").innerHTML = "";
       res.data.posts.forEach((post) => {
         let postDiv = document.createElement("div");
