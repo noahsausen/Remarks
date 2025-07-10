@@ -34,6 +34,7 @@ function SignupForm() {
         document.getElementById("LoadingBackground").style.display = "none";
         // alert("User created successfully!");
         // Auth and go to home
+        window.location.replace("/home");
       } catch (error) {
         document.getElementById("LoadingBackground").style.display = "none";
         alert(error);
