@@ -16,7 +16,7 @@ app.use(express.json());
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://remarks-app.vercel.app/"
+    "https://remarks-app.vercel.app"
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
