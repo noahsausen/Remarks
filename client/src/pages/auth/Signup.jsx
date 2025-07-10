@@ -30,7 +30,7 @@ function SignupForm() {
       alert("Password must be at least 5 characters");
     } else {
       try {
-        const res = await axios.post("http://remarks-server.vercel.app/auth/signup", data);
+        const res = await axios.post("https://remarks-server.vercel.app/auth/signup", data);
         document.getElementById("LoadingBackground").style.display = "none";
         // alert("User created successfully!");
         // Auth and go to home

@@ -12,7 +12,7 @@ export default function Send(author) {
         author: author.author,
         content: content,
       };
-      await axios.post("http://remarks-server.vercel.app/post/send", data);
+      await axios.post("https://remarks-server.vercel.app/post/send", data);
     } catch (error) {
       alert(error);
     }
