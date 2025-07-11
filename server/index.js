@@ -14,10 +14,21 @@ connection();
 app.use(express.json());
 
 app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
+  const allowedOrigins = [
+    "http://localhost:3000",
     "https://remarks-app.vercel.app"
-  );
+  ];
+  const origin = req.headers.origin;
+
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+
+  // res.setHeader(
+  //   "Access-Control-Allow-Origin",
+  //   "https://remarks-app.vercel.app"
+  // );
+  
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS,CONNECT,TRACE"
