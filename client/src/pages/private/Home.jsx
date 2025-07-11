@@ -27,6 +27,9 @@ export default function Home() {
       }
     } catch (error) {
       console.log(error);
+      localStorage.removeItem("token");
+      window.location.replace("/");
+      window.location.reload();
     }
   }
 
