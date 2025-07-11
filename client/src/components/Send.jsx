@@ -14,7 +14,7 @@ export default function Send(author) {
       };
       await axios.post("https://remarks-server.vercel.app/post/send", data);
     } catch (error) {
-      alert(error);
+      alert(error.response.data.message);
     }
     document.getElementById("LoadingBackground").style.display = "none";
     // const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;

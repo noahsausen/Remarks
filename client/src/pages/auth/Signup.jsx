@@ -31,13 +31,15 @@ function SignupForm() {
     } else {
       try {
         const res = await axios.post("https://remarks-server.vercel.app/auth/signup", data);
+        const token = res.data.token;
+        if (token) {
+          localStorage.setItem("token", token);
+        }
         document.getElementById("LoadingBackground").style.display = "none";
-        // alert("User created successfully!");
-        // Auth and go to home
         window.location.replace("/home");
       } catch (error) {
         document.getElementById("LoadingBackground").style.display = "none";
-        alert(error);
+        alert(error.response.data.message);
       }
     }
   }

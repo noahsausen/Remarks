@@ -26,16 +26,16 @@ function LoginForm() {
 
     try {
       const res= await axios.post("https://remarks-server.vercel.app/auth/login", data);
-      document.getElementById("LoadingBackground").style.display = "none";
       // alert("Logged in successfully!");
       const token = res.data.token;
       if (token) {
         localStorage.setItem("token", token);
       }
+      document.getElementById("LoadingBackground").style.display = "none";
       window.location.replace("/home");
     } catch (error) {
       document.getElementById("LoadingBackground").style.display = "none";
-      alert(error);
+      alert(error.response.data.message);
     }
   }
 

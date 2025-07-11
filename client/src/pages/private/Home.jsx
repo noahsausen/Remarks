@@ -32,7 +32,7 @@ export default function Home() {
 
   async function UpdateFeed() {
     try {
-      const res = await axios.get("https://remarks-server.vercel.app/post/getall");
+      const res = await axios.get("https://remarks-server.vercel.app/post/getall");co
       document.getElementById("Feed").innerHTML = "";
       res.data.posts.forEach((post) => {
         let postDiv = document.createElement("div");
