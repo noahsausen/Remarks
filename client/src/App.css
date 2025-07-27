@@ -170,6 +170,20 @@ body, html, #root {
   margin: 0;
 }
 
+.Post div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow-wrap: anywhere;
+  gap: 1em;
+}
+
+.Post h10 {
+  color: hsl(0, 0%, 80%);
+}
+
 .Send {
   position: fixed;
   display: flex;

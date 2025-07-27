@@ -4,6 +4,7 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import Send from "../../components/Send";
 import Loading from "../../components/Loading";
+import { formatDistanceToNow } from 'date-fns';
 
 
 export default function Home() {
@@ -33,6 +34,14 @@ export default function Home() {
     }
   }
 
+  function generateRelativeDate(timestamp) {
+    try {
+      return formatDistanceToNow(timestamp, { addSuffix: true });
+    } catch (error) {
+      return "Hello"
+    }
+  }
+
   async function UpdateFeed() {
     try {
       const res = await axios.get("https://remarks-server.vercel.app/post/getall");
@@ -41,7 +50,10 @@ export default function Home() {
         let postDiv = document.createElement("div");
         postDiv.className = "Post";
         postDiv.innerHTML = `
+          <div>
           <h3>${post.author}</h3>
+          <h10>${generateRelativeDate(post.timestamp)}</h10>
+          </div>
           <p>${post.content}</p>
         `;
         document.getElementById("Feed").prepend(postDiv);
