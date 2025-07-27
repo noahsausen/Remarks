@@ -42,7 +42,7 @@ export default function Home() {
       }
       return relativeDate;
     } catch (error) {
-      return "";
+      return "old";
     }
   }
 
