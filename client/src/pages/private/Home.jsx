@@ -36,7 +36,7 @@ export default function Home() {
 
   function generateRelativeDate(timestamp) {
     try {
-      let relativeDate = formatDistanceToNow(timestamp, { addSuffix: true });
+      let relativeDate = formatDistanceToNow(timestamp, {addSuffix: true});
       if (relativeDate === "less than a minute ago") {
         relativeDate = "just now";
       }
