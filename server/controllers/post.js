@@ -9,6 +9,7 @@ exports.sendPost = async (req, res) => {
     const newPost = new Post({
       author: req.body.author,
       content: req.body.content,
+      timestamp: Date.now(),
     });
     const user = await User.findOne({username: newPost.author});
     if (!user) {
