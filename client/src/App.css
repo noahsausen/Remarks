@@ -166,6 +166,7 @@ body, html, #root {
   background-color: hsl(0, 0%, 10%);
   padding: 1em;
   gap: 0.5em;
+  overflow: hidden;
 }
 
 .Post * {
@@ -184,6 +185,10 @@ body, html, #root {
 
 .Post h10 {
   color: hsl(0, 0%, 80%);
+}
+
+.Post p {
+  text-wrap: wrap;
 }
 
 .Send {
