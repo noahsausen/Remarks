@@ -24,7 +24,12 @@ export default function Send(author) {
 
   return (
     <div className="Send">
-      <input id="PostContent" type="text" placeholder="What's on your mind today..."/>
+      <input id="PostContent" type="text" placeholder="What's on your mind today..." enterKeyHint="send" onKeyUp={(e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          SendPost();
+        }
+      }}/>
       <button><img src={sendIcon} alt="send" onClick={SendPost}></img></button>
     </div>
   );
