@@ -50,11 +50,7 @@ export default function Profile() {
   async function UpdateFeed() {
     console.log("Update Feed");
     try {
-      const data = {
-        author: user.username,
-      };
-      const res = await axios.post("https://remarks-server.vercel.app/post/getusers", data);
-      console.log(res.data);
+      const res = await axios.post("https://remarks-server.vercel.app/post/getusers", username);
       document.getElementById("Feed").innerHTML = "";
       res.data.posts.forEach((post) => {
         let postDiv = document.createElement("div");
@@ -82,7 +78,7 @@ export default function Profile() {
 
   return (
     <div className="Home">
-      <h1 className="HomeHeading">{username}'s Posts</h1>
+      <h1 className="HomeHeading">{username}'s Posts<br/></h1>
       {/*<p className="HomeSubheading">Let's get you caught up.</p>*/}
       <Feed/>
       {/*<Send author={user.username}/>*/}
