@@ -151,6 +151,7 @@ body, html, #root {
 
 .HomeHeading {
   margin: 0;
+  color: hsl(0, 0%, 100%);
 }
 
 .HomeSubheading {
