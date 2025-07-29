@@ -1,8 +1,25 @@
 import '../App.css';
 import sendIcon from '../assets/send.svg';
 import axios from "axios";
+import {useEffect} from "react";
 
 export default function Send(author) {
+  useEffect(() => {
+    const postInputField = document.getElementById('PostContent');
+    const sendButton = document.getElementById('SendButton');
+    const sendButtonImage = document.getElementById('SendButtonImage');
+
+    postInputField.addEventListener('input', function() {
+      if (postInputField.value.trim() !== '') {
+        sendButton.classList.add("active");
+        sendButtonImage.classList.add("active");
+      } else {
+        sendButton.classList.remove("active");
+        sendButtonImage.classList.remove("active");
+      }
+    });
+  }, []);
+
   async function SendPost() {
     document.getElementById("LoadingBackground").style.display = "flex";
     try {
@@ -30,7 +47,7 @@ export default function Send(author) {
           SendPost();
         }
       }}/>
-      <button><img src={sendIcon} alt="send" onClick={SendPost}></img></button>
+      <button id="SendButton"><img id="SendButtonImage" src={sendIcon} alt="send" onClick={SendPost}></img></button>
     </div>
   );
 }
