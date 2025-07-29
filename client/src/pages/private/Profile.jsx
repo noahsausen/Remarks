@@ -57,7 +57,6 @@ export default function Profile() {
         postDiv.className = "Post";
         postDiv.innerHTML = `
           <div>
-          <h3>${post.author}</h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
           <p>${post.content}</p>
@@ -78,9 +77,8 @@ export default function Profile() {
 
   return (
     <div className="Home">
-      <h1 className="HomeHeading">{username}</h1>
+      <h1 className="HomeHeading">{username}'s posts</h1>
       <hr/>
-      <p className="HomeSubheading">Posts</p>
       <Feed/>
       {/*<Send author={user.username}/>*/}
       <Loading/>
