@@ -48,8 +48,10 @@ export default function Profile() {
   }
 
   async function UpdateFeed() {
+    console.log("Update Feed");
     try {
       const res = await axios.get("https://remarks-server.vercel.app/post/getusers", user.username);
+      console.log(res.data);
       document.getElementById("Feed").innerHTML = "";
       res.data.posts.forEach((post) => {
         let postDiv = document.createElement("div");
