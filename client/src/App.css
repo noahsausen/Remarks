@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 
 body, html, #root {
   background-color: hsl(0, 0%, 5%);
@@ -26,10 +26,11 @@ body, html, #root {
   min-height: calc(100vh - 4em);
   top: 4em;
   color: hsl(0, 0%, 95%);
-  font-family: "Lexend", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 450;
   font-style: normal;
+  font-variation-settings: "wdth" 100;
   background-color: hsl(0, 0%, 5%);
 }
 
