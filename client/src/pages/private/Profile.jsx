@@ -78,8 +78,9 @@ export default function Profile() {
 
   return (
     <div className="Home">
-      <h1 className="HomeHeading">{username}'s Posts<br/></h1>
-      {/*<p className="HomeSubheading">Let's get you caught up.</p>*/}
+      <h1 className="HomeHeading">{username}</h1>
+      <hr/>
+      <p className="HomeSubheading">Posts</p>
       <Feed/>
       {/*<Send author={user.username}/>*/}
       <Loading/>
