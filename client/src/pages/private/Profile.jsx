@@ -57,6 +57,7 @@ export default function Profile() {
         postDiv.className = "Post";
         postDiv.innerHTML = `
           <div>
+          <h3>${post.author}</h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
           <p>${post.content}</p>

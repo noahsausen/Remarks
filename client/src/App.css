@@ -181,9 +181,9 @@ body, html, #root {
   justify-content: center;
   width: 80vw;
   max-width: 60em;
-  border-radius: 10px;
+  border-radius: 30px;
   background-color: hsl(0, 0%, 10%);
-  padding: 1em;
+  padding: 1em 1.3em;
   gap: 0.5em;
   overflow: hidden;
 }
