@@ -55,7 +55,7 @@ export default function Home() {
         postDiv.className = "Post";
         postDiv.innerHTML = `
           <div>
-          <h3><a class="WhiteLinkHidden" href="/@${post.author}">${post.author}</a></h3>
+          <h3><a class="WhiteLinkHidden" href="/user/${post.author}">${post.author}</a></h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
           <p>${post.content}</p>
