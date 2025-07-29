@@ -8,6 +8,15 @@ body, html, #root {
   color: hsl(0, 0%, 95%);
 }
 
+.WhiteLinkHidden {
+  color: hsl(0, 0%, 95%);
+  text-decoration: none;
+}
+
+.WhiteLinkHidden:hover {
+  text-decoration: underline;
+}
+
 .App {
   display: flex;
   flex-direction: column;

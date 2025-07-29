@@ -2,12 +2,13 @@ import '../../App.css';
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import {useEffect, useState} from "react";
-import Send from "../../components/Send";
+import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import { formatDistanceToNow } from 'date-fns';
+// import Send from "../../components/Send";
 
-
-export default function Home() {
+export default function Profile() {
+  const { username } = useParams();
   var decoded;
   const [user, setUser] = useState("");
   async function verifyToken() {
@@ -48,14 +49,14 @@ export default function Home() {
 
   async function UpdateFeed() {
     try {
-      const res = await axios.get("https://remarks-server.vercel.app/post/getall");
+      const res = await axios.get("https://remarks-server.vercel.app/post/getusers", user.username);
       document.getElementById("Feed").innerHTML = "";
       res.data.posts.forEach((post) => {
         let postDiv = document.createElement("div");
         postDiv.className = "Post";
         postDiv.innerHTML = `
           <div>
-          <h3><a class="WhiteLinkHidden" href="/@${post.author}">${post.author}</a></h3>
+          <h3>${post.author}</h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
           <p>${post.content}</p>
@@ -76,10 +77,10 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1 className="HomeHeading">Welcome, {user.username}.</h1>
-      <p className="HomeSubheading">Let's get you caught up.</p>
+      <h1 className="HomeHeading">{username}'s Posts</h1>
+      {/*<p className="HomeSubheading">Let's get you caught up.</p>*/}
       <Feed/>
-      <Send author={user.username}/>
+      {/*<Send author={user.username}/>*/}
       <Loading/>
     </div>
   );

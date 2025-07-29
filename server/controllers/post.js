@@ -33,11 +33,12 @@ exports.getAllPosts = async (req, res) => {
   }
 }
 
-// exports.getUserPosts = async (req, res) => {
-//   console.log("getUserPosts started");
-//   try {
-//     const posts = await Post.findOne({author: req.body});
-//   } catch (error) {
-//     return res.status(500).send({message: 'Internal Server Error'});
-//   }
-// }
+exports.getUserPosts = async (req, res) => {
+  console.log("getUserPosts started");
+  try {
+    const posts = await Post.find({author: req.body});
+    res.status(200).send({message: 'Got user posts successfully', posts: posts});
+  } catch (error) {
+    return res.status(500).send({message: 'Internal Server Error'});
+  }
+}
