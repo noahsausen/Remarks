@@ -9,7 +9,16 @@ export default function App() {
     if (token) {
       document.getElementById("Logout").style.display = "block";
     }
-  })
+
+    window.addEventListener('scroll', function() {
+      const myElement = document.getElementById('NavBarBackdrop');
+      if (window.scrollY < 15) {
+        myElement.classList.remove('scrolled');
+      } else {
+        myElement.classList.add('scrolled');
+      }
+    });
+  }, []);
 
   function LogoutUser() {
     localStorage.removeItem("token");
@@ -19,9 +28,9 @@ export default function App() {
 
   return (
     <div className="App">
-      <nav className="NavBar">
-        <a href="/"><h1>Remarks</h1></a>
-        <div className="NavBarFiller"></div>
+      <div id="NavBarBackdrop"></div>
+      <nav id="NavBar">
+        <h1><a href="/">Remarks</a></h1>
         <button id="Logout" onClick={LogoutUser}>Log Out</button>
       </nav>
       <Outlet/>

@@ -14,7 +14,7 @@ import Profile from "./pages/private/Profile";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>s
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<App/>}>
           <Route index element={<Landing/>}/>
