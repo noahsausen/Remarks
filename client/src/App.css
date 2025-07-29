@@ -44,7 +44,7 @@ body, html, #root {
   width: 100%;
   height: 7em;
   background: hsl(0, 0%, 5%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0) 100%);
   align-items: center;
   justify-content: left;
 }
@@ -159,13 +159,6 @@ body, html, #root {
   font-weight: 350;
 }
 
-.Home hr {
-  color: hsl(0, 0%, 80%);
-  width: 75vw;
-  margin: 1.5em;
-  max-width: 55em;
-}
-
 #Feed {
   display: flex;
   flex-direction: column;
@@ -180,13 +173,16 @@ body, html, #root {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 90vw;
+  width: 93vw;
   max-width: 60em;
   border-radius: 30px;
   background-color: hsl(0, 0%, 10%);
   padding: 1em 1.3em;
   gap: 0.5em;
   overflow: hidden;
+  border: none;
+  border-top: 0.7px solid rgba(60, 60, 60, 0.8);
+  border-bottom: 0.7px solid rgba(50, 50, 50, 0.8);
 }
 
 .Post * {
@@ -207,6 +203,12 @@ body, html, #root {
   color: hsl(0, 0%, 80%);
 }
 
+.Post hr {
+  margin: 0.2em 0;
+  width: 100%;
+  color: hsl(0, 0%, 60%);
+}
+
 .Post p {
   text-wrap: wrap;
 }
@@ -217,8 +219,8 @@ body, html, #root {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  bottom: 1.3em;
-  width: calc(100vw - 2.5em);
+  bottom: 1.5em;
+  width: calc(100vw - 4em);
 }
 
 .Send input {

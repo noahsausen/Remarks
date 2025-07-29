@@ -36,7 +36,7 @@ export default function Home() {
 
   function generateRelativeDate(timestamp) {
     try {
-      let relativeDate = formatDistanceToNow(timestamp, {addSuffix: true});
+      let relativeDate = formatDistanceToNow(timestamp, {addSuffix: true}).replace("about", "");
       if (relativeDate === "less than a minute ago") {
         relativeDate = "just now";
       }
@@ -58,6 +58,7 @@ export default function Home() {
           <h3><a class="WhiteLinkHidden" href="/user/${post.author}">${post.author}</a></h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
+          <hr/>
           <p>${post.content}</p>
         `;
         document.getElementById("Feed").prepend(postDiv);

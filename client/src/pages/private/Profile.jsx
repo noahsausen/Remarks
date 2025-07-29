@@ -37,7 +37,7 @@ export default function Profile() {
 
   function generateRelativeDate(timestamp) {
     try {
-      let relativeDate = formatDistanceToNow(timestamp, {addSuffix: true});
+      let relativeDate = formatDistanceToNow(timestamp, {addSuffix: true}).replace("about", "");
       if (relativeDate === "less than a minute ago") {
         relativeDate = "just now";
       }
@@ -60,6 +60,7 @@ export default function Profile() {
           <h3>${post.author}</h3>
           <h10>${generateRelativeDate(post.timestamp)}</h10>
           </div>
+          <hr/>
           <p>${post.content}</p>
         `;
         document.getElementById("Feed").prepend(postDiv);
@@ -79,7 +80,7 @@ export default function Profile() {
   return (
     <div className="Home">
       <h1 className="HomeHeading">{username}'s posts</h1>
-      <hr/>
+      <p></p>
       <Feed/>
       {/*<Send author={user.username}/>*/}
       <Loading/>
