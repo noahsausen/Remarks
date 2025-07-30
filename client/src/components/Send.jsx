@@ -1,5 +1,6 @@
 import '../App.css';
 import sendIcon from '../assets/send.svg';
+import newPostIcon from '../assets/post.svg';
 import axios from "axios";
 import {useEffect} from "react";
 
@@ -41,12 +42,15 @@ export default function Send(author) {
 
   return (
     <div className="Send">
-      <input id="PostContent" type="text" placeholder="What's on your mind today..." enterKeyHint="send" onKeyUp={(e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          SendPost();
-        }
-      }}/>
+      <div id="NewPost">
+        <img id="NewPostIcon" src={newPostIcon} alt="send" onClick={SendPost}></img>
+        <input id="PostContent" type="text" placeholder="New Post" enterKeyHint="send" onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            SendPost();
+          }
+        }}/>
+      </div>
       <button id="SendButton"><img id="SendButtonImage" src={sendIcon} alt="send" onClick={SendPost}></img></button>
     </div>
   );
