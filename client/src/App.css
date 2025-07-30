@@ -277,22 +277,21 @@ body, html, #root {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-left: 1em;
   padding-right: 1em;
-  gap: 8px;
 }
 
 .Send input {
   background: transparent;
   border: none;
   outline: none;
-  height: 3.1em;
+  height: 80%;
   flex-grow: 1;
   flex-shrink: 1;
   color: hsl(0, 0%, 95%);
   min-width: 0;
   max-width: 100%;
   font-size: 1.1em;
+
 }
 
 .Send input::placeholder {
@@ -313,6 +312,8 @@ body, html, #root {
 #NewPostIcon {
   height: 1.2em;
   flex-shrink: 0;
+  padding-left: 1em;
+  padding-right: 0.5em;
 }
 
 .Send button {
