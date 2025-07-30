@@ -38,8 +38,6 @@ export default function Signup() {
   }, []);
 
   async function sendSignupRq(evt) {
-    evt.preventDefault();
-
     document.getElementById("LoadingBackground").style.display = "flex";
 
     const data = {
@@ -72,6 +70,7 @@ export default function Signup() {
         alert(error.response.data.message);
       }
     }
+    evt.preventDefault();
   }
 
   return (
@@ -79,14 +78,30 @@ export default function Signup() {
       <h1>Sign Up</h1>
       <div className="AuthFieldsGroup">
       <div className="AuthFields">
-        <div><label>Username</label><input type="username" id="username" placeholder="" required/></div>
+        <div><label>Username</label><input type="username" id="username" placeholder="" onKeyUp={event => {
+          if (event.key === "Enter") {
+            document.getElementById("email").focus();
+          }
+        }} enterKeyHint="next" required/></div>
         <hr/>
-        <div><label>Email</label><input type="email" id="email" placeholder="" required/></div>
+        <div><label>Email</label><input type="email" id="email" placeholder="" onKeyUp={event => {
+          if (event.key === "Enter") {
+            document.getElementById("password").focus();
+          }
+        }} enterKeyHint="next" required/></div>
       </div>
       <div className="AuthFields">
-        <div><label>Password</label><input type="password" id="password" placeholder="" required/></div>
+        <div><label>Password</label><input type="password" id="password" placeholder="" onKeyUp={event => {
+          if (event.key === "Enter") {
+            document.getElementById("passwordConfirm").focus();
+          }
+        }} enterKeyHint="next" required/></div>
         <hr/>
-        <div><label>Confirm</label><input type="password" id="passwordConfirm" placeholder="" required/></div>
+        <div><label>Confirm</label><input type="password" id="passwordConfirm" placeholder="" onKeyUp={event => {
+          if (document.getElementById("SubmitButton").disabled === false && event.key === "Enter") {
+            sendSignupRq();
+          }
+        }} enterKeyHint="go" required/></div>
       </div>
       </div>
       <button id="SubmitButton" onClick={sendSignupRq}>Sign Up</button>
