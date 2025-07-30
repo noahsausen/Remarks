@@ -24,7 +24,7 @@ export default function Send(author) {
   async function SendPost() {
     document.getElementById("LoadingBackground").style.display = "flex";
     try {
-      const content = document.getElementById('PostContent').value;
+      const content = document.getElementById('PostContent').value.trim();
       document.getElementById('PostContent').value = "";
       const data = {
         author: author.author,

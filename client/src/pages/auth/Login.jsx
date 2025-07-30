@@ -1,28 +1,46 @@
 import '../../App.css';
 import axios from 'axios';
 import Loading from '../../components/Loading';
+import {useEffect} from "react";
 
 export default function Login() {
-  return (
-    <div className="LogIn">
-      <h1>Log In</h1>
-      <LoginForm/>
-      <p>Don't have an account? <a className="WhiteLink" href="/signup">Sign Up</a></p>
-      <Loading/>
-    </div>
-  );
-}
+  useEffect(() => {
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const submitButton = document.getElementById("SubmitButton");
 
-function LoginForm() {
+    submitButton.disabled = true;
+
+    username.addEventListener('input', function() {
+      if (username.value.trim() !== '' && password.value.trim() !== '') {
+        submitButton.classList.add("ready");
+        submitButton.disabled = false;
+      } else {
+        submitButton.classList.remove("ready");
+        submitButton.disabled = true;
+      }
+    });
+
+    password.addEventListener('input', function() {
+      if (username.value.trim() !== '' && password.value.trim() !== '') {
+        submitButton.classList.add("ready");
+        submitButton.disabled = false;
+      } else {
+        submitButton.classList.remove("ready");
+        submitButton.disabled = true;
+      }
+    });
+  }, []);
+
   async function sendLoginRq(evt) {
     evt.preventDefault();
 
     document.getElementById("LoadingBackground").style.display = "flex";
 
-    const form = evt.target;
-    const formData = new FormData(form);
-
-    const data = Object.fromEntries(formData.entries());
+    const data = {
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value,
+    }
 
     try {
       const res= await axios.post("https://remarks-server.vercel.app/auth/login", data);
@@ -40,12 +58,16 @@ function LoginForm() {
   }
 
   return (
-      <form className="AuthWindow" onSubmit={sendLoginRq}>
-        <label>username</label>
-        <input type="username" name="username" placeholder="" required/>
-        <label>password</label>
-        <input type="password" name="password" placeholder="" required/>
-        <button type="submit">Log In</button>
-      </form>
+    <div className="AuthWindow">
+      <h1>Log In</h1>
+      <div className="AuthFields">
+        <div><label>Username</label><input type="username" id="username" placeholder="" required/></div>
+        <hr/>
+        <div><label>Password</label><input type="password" id="password" placeholder="" required/></div>
+      </div>
+      <button id="SubmitButton" onClick={sendLoginRq}>Log In</button>
+      <p>Don't have an account? <a className="WhiteLink" href="/signup">Sign Up</a></p>
+      <Loading/>
+    </div>
   );
 }

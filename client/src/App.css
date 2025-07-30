@@ -108,53 +108,93 @@ body, html, #root {
   justify-content: center;
 }
 
-.SignUp {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  width: 20em;
-}
-
-.LogIn {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  width: 20em;
+.HelpText {
+  position: fixed;
+  bottom: 0;
 }
 
 .AuthWindow {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  text-align: left;
+  gap: 2em;
+  width: 20em;
 }
 
-.AuthWindow input {
-  background-color: hsl(0, 0%, 15%);
-  border-radius: 10px;
+.AuthWindow * {
+  margin: 0;
+}
+
+.AuthFieldsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.AuthFields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.8em 1.3em;
+  text-align: left;
+  background-color: hsl(0, 0%, 10%);
+  border-radius: 30px;
+  border: none;
+  border-top: 0.7px solid rgba(80, 80, 80, 0.8);
+  border-bottom: 0.7px solid rgba(80, 80, 80, 0.8);
+}
+
+.AuthFields div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.AuthFields label {
+  text-wrap: nowrap;
+}
+
+.AuthFields input {
+  background-color: transparent;
   border: none;
   outline: none;
-  padding: 0.2em;
-  padding-left: 0.5em;
   color: hsl(0, 0%, 95%);
+  padding-left: 1em;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
-.AuthWindow input:focus {
-  background-color: hsl(0, 0%, 20%);
+.AuthFields hr {
+  margin: 0.2em 0;
+  width: 100%;
+  color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 80%);
+  height: 1px;
 }
 
 .AuthWindow button {
-  background-color: hsl(0, 0%, 90%);
-  color: hsl(0, 0%, 15%);
-  border-radius: 10px;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 50%);
+  border-radius: 30px;
   border: none;
-  margin-top: 1em;
-  padding: 0.3em;
+  border-top: 0.7px solid rgba(150, 150, 150, 0.8);
+  border-bottom: 0.7px solid rgba(150, 150, 150, 0.8);
+  padding: 0.4em;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin: 0 0.2em;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-top-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 }
 
-.AuthWindow button:hover {
-  background-color: hsl(0, 0%, 100%);
+.AuthWindow button.ready {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 5%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
+
 
 .LoadingBackground {
   position: absolute;
