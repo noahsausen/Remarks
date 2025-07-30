@@ -61,9 +61,17 @@ export default function Login() {
     <div className="AuthWindow">
       <h1>Log In</h1>
       <div className="AuthFields">
-        <div><label>Username</label><input type="username" id="username" placeholder="" onKeyUp={() => document.getElementById("password").focus()} enterKeyHint="next" required/></div>
+        <div><label>Username</label><input type="username" id="username" placeholder="" onKeyUp={event => {
+          if (event.key === "Enter") {
+            document.getElementById("password").focus();
+          }
+        }} enterKeyHint="next" required/></div>
         <hr/>
-        <div><label>Password</label><input type="password" id="password" placeholder="" onKeyUp={() => {if(document.getElementbyId("SubmitButton").disabled === true) {sendLoginRq();}}} enterKeyHint="go" required/></div>
+        <div><label>Password</label><input type="password" id="password" placeholder="" onKeyUp={event => {
+          if (document.getElementById("SubmitButton").disabled === false && event.key === "Enter") {
+            sendLoginRq();
+          }
+        }} enterKeyHint="go" required/></div>
       </div>
       <button id="SubmitButton" onClick={sendLoginRq}>Log In</button>
       <p>Don't have an account? <a className="WhiteLink" href="/signup">Sign Up</a></p>
