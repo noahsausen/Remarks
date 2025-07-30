@@ -33,8 +33,9 @@ export default function Login() {
   }, []);
 
   async function sendLoginRq(evt) {
+    alert("sendLoginRq Triggered")
     evt.preventDefault();
-
+    alert("sendLoginRq 2")
     document.getElementById("LoadingBackground").style.display = "flex";
 
     const data = {
@@ -69,7 +70,6 @@ export default function Login() {
         <hr/>
         <div><label>Password</label><input type="password" id="password" placeholder="" onKeyUp={event => {
           if (document.getElementById("SubmitButton").disabled === false && event.key === "Enter") {
-            alert("Almost there");
             sendLoginRq();
           }
         }} enterKeyHint="go" required/></div>
