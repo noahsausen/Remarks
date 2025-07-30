@@ -44,7 +44,7 @@ export default function Send(author) {
     <div className="Send">
       <div id="NewPost">
         <img id="NewPostIcon" src={newPostIcon} alt="send" onClick={SendPost}></img>
-        <input id="PostContent" type="text" placeholder="New Post" enterKeyHint="send" onKeyUp={(e) => {
+        <input id="PostContent" type="text" placeholder="New Post" autoComplete="off" enterKeyHint="send" onKeyUp={(e) => {
           if (e.key === "Enter") {
             e.preventDefault();
             SendPost();
