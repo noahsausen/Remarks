@@ -68,9 +68,8 @@ export default function Login() {
         }} enterKeyHint="next" required/></div>
         <hr/>
         <div><label>Password</label><input type="password" id="password" placeholder="" onKeyUp={event => {
-          alert(document.getElementById("SubmitButton").disabled);
-          alert(event.key);
           if (document.getElementById("SubmitButton").disabled === false && event.key === "Enter") {
+            alert("Almost there");
             sendLoginRq();
           }
         }} enterKeyHint="go" required/></div>
