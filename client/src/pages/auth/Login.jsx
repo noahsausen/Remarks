@@ -33,9 +33,6 @@ export default function Login() {
   }, []);
 
   async function sendLoginRq(evt) {
-    alert("sendLoginRq Triggered")
-    evt.preventDefault();
-    alert("sendLoginRq 2")
     document.getElementById("LoadingBackground").style.display = "flex";
 
     const data = {
@@ -56,6 +53,7 @@ export default function Login() {
       document.getElementById("LoadingBackground").style.display = "none";
       alert(error.response.data.message);
     }
+    evt.preventDefault();
   }
 
   return (
