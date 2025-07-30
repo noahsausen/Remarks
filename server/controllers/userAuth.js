@@ -31,12 +31,12 @@ exports.loginUser = async (req, res) => {
   try {
     // Check for user
     const user = await User.findOne({username: req.body.username});
-    const token = jwt.sign({user:{_id: user._id, username: user.username, email: user.email}}, process.env.JWT_PRIVATE_KEY, {expiresIn: '7d'});
     if (!user) {
       return res.status(404).send({message: 'Account does not exist'});
     } else {
       // If exists, check auth
       if (user.password === req.body.password) {
+        const token = jwt.sign({user:{_id: user._id, username: user.username, email: user.email}}, process.env.JWT_PRIVATE_KEY, {expiresIn: '7d'});
         return res.status(200).send({message: 'Login successful', token});
       } else {
         return res.status(401).send({message: 'Wrong password'});
