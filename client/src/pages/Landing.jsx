@@ -1,5 +1,6 @@
 import '../../src/App.css';
 import {useEffect} from "react";
+import background from "../assets/background.jpg";
 
 export default function Landing() {
   useEffect(() => {
@@ -10,11 +11,19 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="Landing">
-      <h1>Welcome to Remarks.</h1>
-      <h2><a className="WhiteLink" href="/signup">Sign Up</a> or <a className="WhiteLink" href="/login">Log In</a>
-        <br/>to continue.</h2>
-      <p className="HelpText">Need help or have feedback?<br/>Contact <a className="WhiteLink" href="mailto:noahsausen@gmail.com" target="_blank" rel="noopener noreferrer">noahsausen@gmail.com</a>.</p>
+    <div>
+      <div className="LandingBackground" style={{backgroundImage: `url(${background})`,}}></div>
+      <div className="Landing">
+        <div>
+          <h1>Welcome to Remarks</h1>
+          <p>The future of social media is here.</p>
+        </div>
+        <span>
+          <a className="LandingButton" href="/login">Log In</a>
+          <a className="LandingButton" href="/signup">Sign Up</a>
+        </span>
+        <p className="HelpText">Need help or have feedback?<br/>Contact <a className="WhiteLink" href="mailto:noahsausen@gmail.com" target="_blank" rel="noopener noreferrer">noahsausen@gmail.com</a>.</p>
+      </div>
     </div>
   );
 }
