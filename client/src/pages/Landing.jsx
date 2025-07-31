@@ -25,6 +25,7 @@ export default function Landing() {
           <a className="LandingButton" href="/signup">Sign Up</a>
         </div>
         <p></p>
+        <p></p>
       </div>
       <p className="HelpText"><a className="WhiteLink" href="/support">Support</a></p>
     </div>
