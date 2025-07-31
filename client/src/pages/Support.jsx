@@ -18,9 +18,9 @@ export default function Support() {
         <li>Deleting an account</li>
         <li>Deleting or editing posts</li>
         <li>Reporting inappropriate and/or disorderly activity</li>
-        <li>Suggestions, bug reports, and security vulnerabilities</li>
       </ul>
       <h4>To contact support, please email <a className="WhiteLink" href="mailto:noahsausen@gmail.com">noahsausen@gmail.com</a>.</h4>
+      <p>Finally, if you have feedback or find bugs/vulnerabilities, please contact support so we can improve the Remarks experience for everyone and ensure the highest level of security.</p>
     </div>
   );
 }

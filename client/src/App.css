@@ -124,8 +124,23 @@ body, html, #root {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1em;
+  gap: 2em;
   z-index: 2;
+}
+
+.Lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.Lockup * {
+  margin: 0;
+}
+
+.Lockup img {
+  width: 4em;
 }
 
 .LandingButton {
@@ -156,6 +171,7 @@ body, html, #root {
 
 .Support {
   padding: 2em;
+  padding-top: 3em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
