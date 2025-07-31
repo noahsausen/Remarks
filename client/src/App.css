@@ -159,6 +159,13 @@ body, html, #root {
   font-size: 1.2em;
   padding: 0.6em 0.9em;
   margin: 0.5em;
+  transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+.LandingButton:hover {
+  box-shadow: 0 0px 32px rgba(100, 100, 100, 0.2),
+  inset 0 4px 20px rgba(150, 150, 150, 0.4);
+  background: rgba(70, 70, 70, 0.5);
 }
 
 .HelpText {
@@ -391,6 +398,13 @@ body, html, #root {
   align-items: center;
   justify-content: center;
   padding-right: 1em;
+  transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+
+#NewPost:hover {
+  box-shadow: 0 0px 32px rgba(100, 100, 100, 0.2),
+  inset 0 4px 20px rgba(150, 150, 150, 0.3);
+  background: rgba(70, 70, 70, 0.3);
 }
 
 .Send input {
@@ -437,7 +451,7 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.3s cubic-bezier(0.5, 1, 0.3, 0.8), opacity 0.1s ease-out, margin-left 0.3s ease-out;
+  transition: width 0.3s cubic-bezier(0.5, 1, 0.3, 0.8), opacity 0.1s ease-out, margin-left 0.3s ease-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
   border-radius: 100000px;
   height: 3.2em;
   outline: none;
@@ -461,6 +475,12 @@ body, html, #root {
   margin-left: 0.7em;
 }
 
+.Send button:hover {
+  box-shadow: 0 0px 32px rgba(100, 100, 100, 0.2),
+  inset 0 4px 20px rgba(150, 150, 150, 0.3);
+  background: rgba(70, 70, 70, 0.3);
+}
+
 .Send button::after {
   background: rgba(50, 50, 50, 0.3);
   border-radius: 2rem;
@@ -471,6 +491,8 @@ body, html, #root {
   z-index: -1;
   filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
+
+
 
 #SendButtonImage {
   rotate: -45deg;
