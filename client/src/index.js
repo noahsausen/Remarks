@@ -10,6 +10,7 @@ import Login from "./pages/auth/Login";
 import Landing from "./pages/Landing";
 import Home from "./pages/private/Home";
 import Profile from "./pages/private/Profile";
+import Support from "./pages/Support";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App/>}>
           <Route index element={<Landing/>}/>
+          <Route path="support" element={<Support/>} />
           <Route path="signup" element={<Signup/>} />
           <Route path="login" element={<Login/>} />
           <Route path="home" element={<Home/>} />

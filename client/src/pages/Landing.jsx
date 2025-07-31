@@ -23,7 +23,7 @@ export default function Landing() {
           <a className="LandingButton" href="/signup">Sign Up</a>
         </div>
       </div>
-      <p className="HelpText">Need help or have feedback?<br/>Contact <a className="WhiteLink" href="mailto:noahsausen@gmail.com" target="_blank" rel="noopener noreferrer">noahsausen@gmail.com</a>.</p>
+      <p className="HelpText"><a className="WhiteLink" href="/support">Support</a></p>
     </div>
   );
 }
