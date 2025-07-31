@@ -18,12 +18,12 @@ export default function Landing() {
           <h1>Welcome to Remarks</h1>
           <p>The future of social media is here.</p>
         </div>
-        <span>
+        <div>
           <a className="LandingButton" href="/login">Log In</a>
           <a className="LandingButton" href="/signup">Sign Up</a>
-        </span>
-        <p className="HelpText">Need help or have feedback?<br/>Contact <a className="WhiteLink" href="mailto:noahsausen@gmail.com" target="_blank" rel="noopener noreferrer">noahsausen@gmail.com</a>.</p>
+        </div>
       </div>
+      <p className="HelpText">Need help or have feedback?<br/>Contact <a className="WhiteLink" href="mailto:noahsausen@gmail.com" target="_blank" rel="noopener noreferrer">noahsausen@gmail.com</a>.</p>
     </div>
   );
 }
