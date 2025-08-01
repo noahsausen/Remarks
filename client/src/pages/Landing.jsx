@@ -14,7 +14,6 @@ export default function Landing() {
     document.addEventListener("mousemove", (event) => {
       const mouseX = Math.floor(((event.clientX / window.innerWidth) * 100));
       const mouseY = Math.floor(((event.clientY / window.innerHeight) * 100));
-      console.log(mouseX + " " + mouseY);
       document.getElementById("MouseGlow").style.opacity = "0.05";
       document.getElementById("MouseGlow").style.left = mouseX + "vw";
       document.getElementById("MouseGlow").style.top = mouseY + "vh";

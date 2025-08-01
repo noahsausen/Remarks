@@ -415,13 +415,7 @@ body, html, #root {
   align-items: center;
   justify-content: center;
   padding-right: 1em;
-  transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
-}
-
-#NewPost:hover {
-  box-shadow: 0 0px 32px rgba(100, 100, 100, 0.2),
-  inset 0 4px 20px rgba(150, 150, 150, 0.3);
-  background: rgba(70, 70, 70, 0.3);
+  overflow: hidden;
 }
 
 .Send input {
@@ -441,6 +435,17 @@ body, html, #root {
 
 .Send input::placeholder {
   color: hsl(0, 0%, 50%);
+}
+
+#MouseGlowSend {
+  position: absolute;
+  bottom: 50%;
+  left: 50vw;
+  transform: translate(-55%, 50%);
+  width: 20em;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
 }
 
 #NewPost::after {
@@ -468,7 +473,7 @@ body, html, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.3s cubic-bezier(0.5, 1, 0.3, 0.8), opacity 0.1s ease-out, margin-left 0.3s ease-out, box-shadow 0.2s ease-in-out, background 0.2s ease-in-out;
+  transition: width 0.3s cubic-bezier(0.5, 1, 0.3, 0.8), opacity 0.1s ease-out, margin-left 0.3s ease-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
   border-radius: 100000px;
   height: 3.2em;
   outline: none;

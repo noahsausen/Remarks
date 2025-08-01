@@ -1,6 +1,7 @@
 import '../App.css';
 import sendIcon from '../assets/send.svg';
 import newPostIcon from '../assets/post.svg';
+import glow from "../assets/glow.png";
 import axios from "axios";
 import {useEffect} from "react";
 
@@ -18,6 +19,17 @@ export default function Send(author) {
         sendButton.classList.remove("active");
         sendButtonImage.classList.remove("active");
       }
+    });
+
+    document.getElementById("NewPost").addEventListener("mousemove", (event) => {
+      const mouseX = Math.floor(((event.clientX / window.innerWidth) * 100));
+      const mouseY = Math.floor(((event.clientY / window.innerHeight) * 100));
+      document.getElementById("MouseGlowSend").style.opacity = "0.1";
+      document.getElementById("MouseGlowSend").style.left = mouseX + "vw";
+    });
+
+    document.getElementById("NewPost").addEventListener("mouseout", (event) => {
+      document.getElementById("MouseGlowSend").style.opacity = "0";
     });
   }, []);
 
@@ -50,6 +62,7 @@ export default function Send(author) {
             SendPost();
           }
         }}/>
+        <img id="MouseGlowSend" src={glow} alt=""/>
       </div>
       <button id="SendButton"><img id="SendButtonImage" src={sendIcon} alt="send" onClick={SendPost}></img></button>
     </div>
