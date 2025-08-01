@@ -441,7 +441,7 @@ body, html, #root {
   position: absolute;
   bottom: 50%;
   left: 50vw;
-  transform: translate(-55%, 50%);
+  transform: translate(-130%, 50%);
   width: 20em;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
