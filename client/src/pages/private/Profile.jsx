@@ -10,7 +10,7 @@ import { formatDistanceToNow } from 'date-fns';
 export default function Profile() {
   const { username } = useParams();
   var decoded;
-  //const [user, setUser] = useState("");
+  const [/*user,*/ setUser] = useState("");
   async function verifyToken() {
     document.getElementById("LoadingBackground").style.display = "flex";
     try {
