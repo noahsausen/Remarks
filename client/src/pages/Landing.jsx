@@ -37,7 +37,7 @@ export default function Landing() {
         <p></p>
         <p></p>
       </div>
-      <p className="HelpText"><a className="WhiteLink" href="/support">Support</a>&nbsp;&nbsp;•&nbsp;&nbsp;&copy; 2025 <a href="https://noahsausen.github.io" className="WhiteLink">Noah Sausen</a></p>
+      <p className="HelpText"><a className="WhiteLink" href="/support">Support</a>&nbsp;&nbsp;•&nbsp;&nbsp;&copy; {new Date().getFullYear()} <a href="https://noahsausen.github.io" className="WhiteLink">Noah Sausen</a></p>
 
     </div>
   );
