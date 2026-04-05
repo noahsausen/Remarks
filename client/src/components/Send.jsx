@@ -23,7 +23,7 @@ export default function Send(author) {
 
     document.getElementById("NewPost").addEventListener("mousemove", (event) => {
       const mouseX = Math.floor(((event.clientX / window.innerWidth) * 100));
-      const mouseY = Math.floor(((event.clientY / window.innerHeight) * 100));
+      //const mouseY = Math.floor(((event.clientY / window.innerHeight) * 100));
       document.getElementById("MouseGlowSend").style.opacity = "0";
       document.getElementById("MouseGlowSend").style.left = mouseX + "vw";
     });
