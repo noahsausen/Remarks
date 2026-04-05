@@ -53,7 +53,7 @@ export default function Signup() {
     } else if (data.password.length < 5) {
       document.getElementById("LoadingBackground").style.display = "none";
       alert("Password must be at least 5 characters");
-    } else if (!(data.email.match(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i))) {
+    } else if (!(data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))) {
       document.getElementById("LoadingBackground").style.display = "none";
       alert("Invalid email");
     } else {

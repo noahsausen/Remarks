@@ -72,7 +72,7 @@ export default function Home() {
   useEffect(() => {
     verifyToken();
     UpdateFeed();
-  }, []);
+  }/*, []*/);
 
 
   return (

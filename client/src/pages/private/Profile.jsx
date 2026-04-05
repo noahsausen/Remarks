@@ -74,7 +74,7 @@ export default function Profile() {
   useEffect(() => {
     verifyToken();
     UpdateFeed();
-  }, []);
+  }/*, []*/);
 
 
   return (
