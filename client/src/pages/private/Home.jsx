@@ -8,7 +8,6 @@ import { formatDistanceToNow } from 'date-fns';
 
 
 export default function Home() {
-  var decoded;
   const [user, setUser] = useState("");
 
   useEffect(() => {
@@ -24,6 +23,7 @@ export default function Home() {
       }
     }
 
+    var decoded;
     const verifyToken = async () => {
       document.getElementById("LoadingBackground").style.display = "flex";
       try {

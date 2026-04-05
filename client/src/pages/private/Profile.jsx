@@ -9,8 +9,7 @@ import { formatDistanceToNow } from 'date-fns';
 
 export default function Profile() {
   const { username } = useParams();
-  var decoded;
-  const [user, setUser] = useState("");
+  const [/*user*/, setUser] = useState("");
 
   useEffect(() => {
     const generateRelativeDate = (timestamp) => {
@@ -25,6 +24,7 @@ export default function Profile() {
       }
     }
 
+    var decoded;
     const verifyToken = async () => {
       document.getElementById("LoadingBackground").style.display = "flex";
       try {
