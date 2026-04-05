@@ -46,7 +46,7 @@ export default function Home() {
     }
   }
 
-  async function UpdateFeed() {
+  async function updateFeed() {
     try {
       const res = await axios.get("https://remarks-server.vercel.app/post/getall");
       document.getElementById("Feed").innerHTML = "";
@@ -71,8 +71,8 @@ export default function Home() {
 
   useEffect(() => {
     verifyToken();
-    UpdateFeed();
-  }, []);
+    updateFeed();
+  }, [verifyToken, updateFeed]);
 
 
   return (

@@ -47,7 +47,7 @@ export default function Profile() {
     }
   }
 
-  async function UpdateFeed() {
+  async function updateFeed() {
     console.log("Update Feed");
     try {
       const res = await axios.post("https://remarks-server.vercel.app/post/getusers", {author: username});
@@ -73,8 +73,8 @@ export default function Profile() {
 
   useEffect(() => {
     verifyToken();
-    UpdateFeed();
-  }, []);
+    updateFeed();
+  }, [verifyToken, updateFeed]);
 
 
   return (
