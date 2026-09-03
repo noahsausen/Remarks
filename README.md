@@ -1,10 +1,10 @@
 # [Remarks](https://remarks-app.vercel.app)
 ### Simple social media. Check it out!
 
-> [!CAUTION]
+> [!IMPORTANT]
 > ### Remarks services are currently unavailable.
 >
-> In early September, a critical authentication vulnerability was discoverd. To protect the platform and user data, I have temporarily taken the backend infrastructure offline. As a result, all user logins and use of the platform is suspended. Please be advised that there is currently no estimated time of restoration, but I am working towards a solution.
+> Remarks is currently undergoing maintenance to deliver important updates and security improvements. During this period, the platform may be temporarily unavailable, and users will not be able to log in. We are currently unable to provide any further details, and we appreciate your patience as we work to upgrade your experience.
 
 ### Project Stack
 - Hosted with Vercel
@@ -13,4 +13,4 @@
 - MongoDB Atlas database
 - JWT authentication
 
-Built by Noah Sausen at SummerTech 2025
+Founded by Noah Sausen at SummerTech 2025
